@@ -1,0 +1,211 @@
+{
+    "id": "01aefa93-6044-4159-8358-7e91310aa05f",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Level",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "d82becc3-3aae-47e9-9084-2f141dd9b4b3",
+            "label": "container_body",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "ebf2651a-f6b7-4b22-8149-c47127506b06",
+                    "label": "bg",
+                    "components": [],
+                    "texture": {
+                        "key": "bg"
+                    },
+                    "x": 960,
+                    "y": 540
+                },
+                {
+                    "type": "Text",
+                    "id": "e20b0e31-c794-43e4-bdca-ebecaacf3ea9",
+                    "label": "txt_score",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 960,
+                    "y": 540,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "alpha": 0.6,
+                    "alphaTopLeft": 0.6,
+                    "alphaTopRight": 0.6,
+                    "alphaBottomLeft": 0.6,
+                    "alphaBottomRight": 0.6,
+                    "text": "0",
+                    "align": "center",
+                    "fontFamily": "Arial",
+                    "fontSize": "600px",
+                    "fontStyle": "bold",
+                    "color": "#eff0f2"
+                },
+                {
+                    "type": "Container",
+                    "id": "c0f90678-1d64-4341-8348-7bb40a788034",
+                    "label": "container_lights",
+                    "scope": "CLASS",
+                    "components": [],
+                    "list": [
+                        {
+                            "type": "Sprite",
+                            "id": "9ae83bc8-ea84-4b5d-9f34-f3506dda10eb",
+                            "label": "light_1",
+                            "components": [],
+                            "texture": {
+                                "key": "light_1"
+                            },
+                            "x": 960,
+                            "y": 44
+                        },
+                        {
+                            "type": "Sprite",
+                            "id": "6f0c6b3d-b0a7-4f60-a3b1-e411b622bd6a",
+                            "label": "light_2",
+                            "components": [],
+                            "texture": {
+                                "key": "light_1"
+                            },
+                            "x": 810,
+                            "y": 44
+                        },
+                        {
+                            "type": "Sprite",
+                            "id": "0e30078f-0da8-46b5-ba55-b24f77dfba01",
+                            "label": "light_3",
+                            "components": [],
+                            "texture": {
+                                "key": "light_1"
+                            },
+                            "x": 1110,
+                            "y": 44
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "ddd0aafb-30d4-4b4b-b011-8ea5930f1a79",
+            "label": "container_popup",
+            "scope": "CLASS",
+            "components": [],
+            "list": [
+                {
+                    "type": "Container",
+                    "id": "4c43a4bb-c567-4813-88e9-f10841d32859",
+                    "label": "container_popup_body",
+                    "scope": "CLASS",
+                    "components": [],
+                    "y": 710,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "1e08cb69-2c4d-4885-bc2b-ae2f2c1e81ec",
+                            "label": "popup_bg",
+                            "components": [],
+                            "texture": {
+                                "key": "popup-bg"
+                            },
+                            "x": 960,
+                            "y": 575,
+                            "scaleX": 0.5,
+                            "scaleY": 0.5
+                        },
+                        {
+                            "type": "Image",
+                            "id": "17a90ee2-1337-4aa9-ad3b-1cda83666d6e",
+                            "label": "btn_home",
+                            "scope": "CLASS",
+                            "components": [],
+                            "texture": {
+                                "key": "btn_home"
+                            },
+                            "x": 1050,
+                            "y": 684,
+                            "scaleX": 0.5,
+                            "scaleY": 0.5
+                        },
+                        {
+                            "type": "Image",
+                            "id": "3d208195-a9b1-4297-843c-4dcc7172b50f",
+                            "label": "btn_replay",
+                            "scope": "CLASS",
+                            "components": [],
+                            "texture": {
+                                "key": "btn_replay"
+                            },
+                            "x": 885,
+                            "y": 684,
+                            "scaleX": 0.5,
+                            "scaleY": 0.5
+                        },
+                        {
+                            "type": "Text",
+                            "id": "f0f9385a-2bb3-49b4-8a91-571fda74d43d",
+                            "label": "txt_high_score",
+                            "scope": "CLASS",
+                            "components": [],
+                            "x": 883,
+                            "y": 595,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "0",
+                            "align": "center",
+                            "fontFamily": "Arial",
+                            "fontSize": "55px",
+                            "fontStyle": "bold",
+                            "color": "#3b4f80"
+                        },
+                        {
+                            "type": "Text",
+                            "id": "b4e4a389-c0a0-42bf-ab4e-bf5610e4584e",
+                            "label": "txt_current_score",
+                            "scope": "CLASS",
+                            "components": [],
+                            "x": 1033,
+                            "y": 595,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "0",
+                            "align": "center",
+                            "fontFamily": "Arial",
+                            "fontSize": "55px",
+                            "fontStyle": "bold",
+                            "color": "#3b4f80"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "c67dd067-dcfc-492b-9781-553fb29c2f8b",
+                    "label": "popup_man",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "popup-man"
+                    },
+                    "x": 960,
+                    "y": -130,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

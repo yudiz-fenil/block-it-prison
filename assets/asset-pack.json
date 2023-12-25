@@ -1,0 +1,253 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "assets/images/buttons/btn_home.png",
+                "type": "image",
+                "key": "btn_home"
+            },
+            {
+                "url": "assets/images/buttons/btn_play.png",
+                "type": "image",
+                "key": "btn_play"
+            },
+            {
+                "url": "assets/images/buttons/btn_replay.png",
+                "type": "image",
+                "key": "btn_replay"
+            },
+            {
+                "url": "src/scenes/Home.js",
+                "type": "sceneFile",
+                "key": "Home"
+            },
+            {
+                "url": "assets/images/lights/light_1.png",
+                "type": "image",
+                "key": "light_1"
+            },
+            {
+                "url": "assets/images/lights/light_2.png",
+                "type": "image",
+                "key": "light_2"
+            },
+            {
+                "url": "assets/sprites/player/p01.png",
+                "type": "image",
+                "key": "p01"
+            },
+            {
+                "url": "assets/sprites/player/p02.png",
+                "type": "image",
+                "key": "p02"
+            },
+            {
+                "url": "assets/sprites/player/p03.png",
+                "type": "image",
+                "key": "p03"
+            },
+            {
+                "url": "assets/sprites/player/p04.png",
+                "type": "image",
+                "key": "p04"
+            },
+            {
+                "url": "assets/sprites/player/p05.png",
+                "type": "image",
+                "key": "p05"
+            },
+            {
+                "url": "assets/sprites/player/p06.png",
+                "type": "image",
+                "key": "p06"
+            },
+            {
+                "url": "assets/sprites/player/p07.png",
+                "type": "image",
+                "key": "p07"
+            },
+            {
+                "url": "assets/sprites/player/p08.png",
+                "type": "image",
+                "key": "p08"
+            },
+            {
+                "url": "assets/sprites/player/p09.png",
+                "type": "image",
+                "key": "p09"
+            },
+            {
+                "url": "assets/sprites/player/p10.png",
+                "type": "image",
+                "key": "p10"
+            },
+            {
+                "url": "assets/sprites/player/p11.png",
+                "type": "image",
+                "key": "p11"
+            },
+            {
+                "url": "assets/sprites/player/p12.png",
+                "type": "image",
+                "key": "p12"
+            },
+            {
+                "url": "assets/sprites/player/p13.png",
+                "type": "image",
+                "key": "p13"
+            },
+            {
+                "url": "assets/sprites/player/p14.png",
+                "type": "image",
+                "key": "p14"
+            },
+            {
+                "url": "assets/sprites/player/p15.png",
+                "type": "image",
+                "key": "p15"
+            },
+            {
+                "url": "assets/sprites/player/p16.png",
+                "type": "image",
+                "key": "p16"
+            },
+            {
+                "url": "assets/sprites/player/p17.png",
+                "type": "image",
+                "key": "p17"
+            },
+            {
+                "url": "assets/sprites/player/p18.png",
+                "type": "image",
+                "key": "p18"
+            },
+            {
+                "url": "assets/sprites/player/p19.png",
+                "type": "image",
+                "key": "p19"
+            },
+            {
+                "url": "assets/sprites/player/p20.png",
+                "type": "image",
+                "key": "p20"
+            },
+            {
+                "url": "assets/sprites/player/p21.png",
+                "type": "image",
+                "key": "p21"
+            },
+            {
+                "url": "assets/sprites/player/p22.png",
+                "type": "image",
+                "key": "p22"
+            },
+            {
+                "url": "assets/sprites/player/p23.png",
+                "type": "image",
+                "key": "p23"
+            },
+            {
+                "url": "assets/sprites/player/p24.png",
+                "type": "image",
+                "key": "p24"
+            },
+            {
+                "url": "assets/sprites/player/p25.png",
+                "type": "image",
+                "key": "p25"
+            },
+            {
+                "url": "assets/sprites/player/p26.png",
+                "type": "image",
+                "key": "p26"
+            },
+            {
+                "url": "assets/sprites/player/p27.png",
+                "type": "image",
+                "key": "p27"
+            },
+            {
+                "url": "assets/sprites/player/p28.png",
+                "type": "image",
+                "key": "p28"
+            },
+            {
+                "url": "assets/sprites/player/p29.png",
+                "type": "image",
+                "key": "p29"
+            },
+            {
+                "url": "assets/sprites/player/p30.png",
+                "type": "image",
+                "key": "p30"
+            },
+            {
+                "url": "assets/sprites/player/p31.png",
+                "type": "image",
+                "key": "p31"
+            },
+            {
+                "url": "assets/sprites/player/p32.png",
+                "type": "image",
+                "key": "p32"
+            },
+            {
+                "url": "assets/sprites/player/p33.png",
+                "type": "image",
+                "key": "p33"
+            },
+            {
+                "url": "assets/sprites/player/p34.png",
+                "type": "image",
+                "key": "p34"
+            },
+            {
+                "url": "assets/sprites/player/p35.png",
+                "type": "image",
+                "key": "p35"
+            },
+            {
+                "url": "assets/sprites/player/p36.png",
+                "type": "image",
+                "key": "p36"
+            },
+            {
+                "url": "assets/animations/player.json",
+                "type": "animation",
+                "key": "player"
+            },
+            {
+                "url": "assets/images/popup-bg.png",
+                "type": "image",
+                "key": "popup-bg"
+            },
+            {
+                "url": "assets/images/popup-man.png",
+                "type": "image",
+                "key": "popup-man"
+            },
+            {
+                "url": "assets/images/snow.png",
+                "type": "image",
+                "key": "snow"
+            },
+            {
+                "url": "assets/images/wall-h.png",
+                "type": "image",
+                "key": "wall-h"
+            },
+            {
+                "url": "assets/images/wall-v.png",
+                "type": "image",
+                "key": "wall-v"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}
