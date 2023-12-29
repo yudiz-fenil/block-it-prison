@@ -7,6 +7,11 @@
                 "key": "btn_home"
             },
             {
+                "url": "assets/images/buttons/btn_pause.png",
+                "type": "image",
+                "key": "btn_pause"
+            },
+            {
                 "url": "assets/images/buttons/btn_play.png",
                 "type": "image",
                 "key": "btn_play"
@@ -15,6 +20,11 @@
                 "url": "assets/images/buttons/btn_replay.png",
                 "type": "image",
                 "key": "btn_replay"
+            },
+            {
+                "url": "assets/images/buttons/btn_resume.png",
+                "type": "image",
+                "key": "btn_resume"
             },
             {
                 "url": "src/scenes/Home.js",

@@ -32,7 +32,7 @@
                     "label": "txt_score",
                     "scope": "CLASS",
                     "components": [],
-                    "x": 960,
+                    "x": 959,
                     "y": 540,
                     "originX": 0.5,
                     "originY": 0.5,
@@ -44,7 +44,7 @@
                     "text": "0",
                     "align": "center",
                     "fontFamily": "Arial",
-                    "fontSize": "600px",
+                    "fontSize": "400px",
                     "fontStyle": "bold",
                     "color": "#eff0f2"
                 },
@@ -89,6 +89,19 @@
                             "y": 44
                         }
                     ]
+                },
+                {
+                    "type": "Image",
+                    "id": "60643430-ed57-4526-9130-94c9b4474915",
+                    "label": "btn_pause",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "btn_pause"
+                    },
+                    "x": 736,
+                    "y": 92,
+                    "visible": false
                 }
             ]
         },

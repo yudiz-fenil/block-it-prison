@@ -30,7 +30,7 @@ class Level extends Phaser.Scene {
 		container_body.add(bg);
 
 		// txt_score
-		const txt_score = this.add.text(960, 540, "", {});
+		const txt_score = this.add.text(959, 540, "", {});
 		txt_score.setOrigin(0.5, 0.5);
 		txt_score.alpha = 0.6;
 		txt_score.alphaTopLeft = 0.6;
@@ -38,7 +38,7 @@ class Level extends Phaser.Scene {
 		txt_score.alphaBottomLeft = 0.6;
 		txt_score.alphaBottomRight = 0.6;
 		txt_score.text = "0";
-		txt_score.setStyle({ "align": "center", "color": "#eff0f2", "fontFamily": "Arial", "fontSize": "600px", "fontStyle": "bold" });
+		txt_score.setStyle({ "align": "center", "color": "#eff0f2", "fontFamily": "Arial", "fontSize": "400px", "fontStyle": "bold" });
 		container_body.add(txt_score);
 
 		// container_lights
@@ -56,6 +56,11 @@ class Level extends Phaser.Scene {
 		// light_3
 		const light_3 = this.add.sprite(1110, 44, "light_1");
 		container_lights.add(light_3);
+
+		// btn_pause
+		const btn_pause = this.add.image(736, 92, "btn_pause");
+		btn_pause.visible = false;
+		container_body.add(btn_pause);
 
 		// container_popup
 		const container_popup = this.add.container(0, 0);
@@ -104,6 +109,7 @@ class Level extends Phaser.Scene {
 
 		this.txt_score = txt_score;
 		this.container_lights = container_lights;
+		this.btn_pause = btn_pause;
 		this.container_popup = container_popup;
 		this.container_popup_body = container_popup_body;
 		this.btn_home = btn_home;
@@ -119,6 +125,8 @@ class Level extends Phaser.Scene {
 	txt_score;
 	/** @type {Phaser.GameObjects.Container} */
 	container_lights;
+	/** @type {Phaser.GameObjects.Image} */
+	btn_pause;
 	/** @type {Phaser.GameObjects.Container} */
 	container_popup;
 	/** @type {Phaser.GameObjects.Container} */
@@ -141,8 +149,8 @@ class Level extends Phaser.Scene {
 		this.input.setDefaultCursor('pointer');
 		this.tweens.add({
 			targets: btn,
-			scaleX: scale + 0.04,
-			scaleY: scale + 0.04,
+			scaleX: scale + 0.05,
+			scaleY: scale + 0.05,
 			duration: 100
 		})
 	}
@@ -162,27 +170,9 @@ class Level extends Phaser.Scene {
 		this.score++;
 		this.txt_score.setText(this.score);
 	}
-	showBallParticles = () => {
-		const emitter = this.particle.createEmitter({
-			scale: { start: 6, end: 0 },
-			frequency: 200,
-			lifespan: 2000,
-			quantity: 1,
-			blendMode: "NORMAL",
-			tint: 0xea6f5b,
-			alpha: { start: 1, end: 0, ease: 'Power2' }
-		});
-		emitter.startFollow(this.player);
-	}
 	lightsAnimation = () => {
 		this.container_lights.each(light => {
 			light.anims.play('lights');
-			// this.tweens.add({
-			// 	targets: light,
-			// 	angle: 360,
-			// 	duration: 800,
-			// 	repeat: -1
-			// });
 		})
 	}
 	popupBodyAnimation = () => {
@@ -202,25 +192,6 @@ class Level extends Phaser.Scene {
 			y: 370,
 			duration: 500,
 			ease: 'Bounce',
-			onComplete: () => {
-				// const particles = this.add.particles('snow');
-				// const emitter = particles.createEmitter({
-				// 	x: { min: this.popup_man.x - 100, max: this.popup_man.x + 150 },
-				// 	y: this.popup_man.y + 60,
-				// 	speed: 100,
-				// 	scale: { start: 1, end: 0 },
-				// 	alpha: { start: 1, end: 0 },
-				// 	lifespan: 1000,
-				// 	frequency: 30,
-				// 	gravityY: -250,
-				// 	tint: 0x2f3335,
-				// });
-				// emitter.start();
-				// setTimeout(() => {
-				// 	emitter.stop();
-				// 	emitter.remove();
-				// }, 800);
-			}
 		});
 	}
 	showPopup = () => {
@@ -240,37 +211,56 @@ class Level extends Phaser.Scene {
 	}
 	create() {
 		this.editorCreate();
-		this.nCurrentColorIndex = 0;
 		this.score = 0;
 		this.isGameOver = false;
+		this.isGameStart = false;
 		this.canActivateWall = true;
 		this.topScore = localStorage.getItem(gameOptions.localStorageName) == null ? 0 : localStorage.getItem(gameOptions.localStorageName);
 		this.txt_high_score.setText(this.topScore);
-		this.particle = this.add.particles('snow');
 
 		this.ballSpeed = gameOptions.ballStartSpeed;
 		this.wallGroup = this.physics.add.group();
 
 		this.player = this.physics.add.sprite(this.game.config.width / 2, this.game.config.height * 4 / 5, "p01");
 		this.player.setScale(0.5);
-		this.player.setCircle(100)
-		this.player.setOffset(30, 80)
+		this.player.setSize(220, 150);
+		// this.player.setCircle(80)
+		// this.player.setOffset(0, 80)
 		this.player.setBounce(1);
+		this.player.setAngle(180);
 
 		this.createWall(690, this.game.config.height / 2, "wall-v"); // Left wall
 		this.createWall(1230, this.game.config.height / 2, "wall-v"); // Right wall
-		this.createWall(this.game.config.width / 2, 40, "wall-h"); // Top wall
+		this.createWall(this.game.config.width / 2, 75, "wall-h"); // Top wall
 		this.lowerWall = this.createWall(960, 1057, "wall");
+		this.lowerWall.alpha = 0.1;
 
-		this.btn_replay.setInteractive();
-		this.btn_replay.on("pointerup", this.handleReplay, this);
-		this.btn_replay.on('pointerover', () => this.pointerOver(this.btn_replay, 0.5));
-		this.btn_replay.on('pointerout', () => this.pointerOut(this.btn_replay, 0.5));
+		this.btn_replay.setInteractive()
+			.on("pointerup", this.handleReplay, this)
+			.on('pointerover', () => this.pointerOver(this.btn_replay, 0.5))
+			.on('pointerout', () => this.pointerOut(this.btn_replay, 0.5));
 
-		this.btn_home.setInteractive();
-		this.btn_home.on("pointerup", this.backToHome, this);
-		this.btn_home.on('pointerover', () => this.pointerOver(this.btn_home, 0.5));
-		this.btn_home.on('pointerout', () => this.pointerOut(this.btn_home, 0.5));
+		this.btn_home.setInteractive()
+			.on("pointerup", this.backToHome, this)
+			.on('pointerover', () => this.pointerOver(this.btn_home, 0.5))
+			.on('pointerout', () => this.pointerOut(this.btn_home, 0.5));
+
+		this.isGamePaused = false;
+		this.btn_pause.setInteractive()
+			.on("pointerover", () => this.pointerOver(this.btn_pause, 1))
+			.on("pointerout", () => this.pointerOut(this.btn_pause, 1))
+			.on("pointerup", () => {
+				if (this.isGamePaused) {
+					this.physics.resume();
+					this.player.anims.play('walk', true);
+					this.btn_pause.setTexture("btn_pause");
+				} else {
+					this.btn_pause.setTexture("btn_resume");
+					this.physics.pause();
+					this.player.anims.pause(Phaser.Animations.AnimationFrame(0));
+				}
+				this.isGamePaused = !this.isGamePaused;
+			});
 
 		this.physics.add.collider(this.player, this.wallGroup, (ball, wall) => {
 			this.canActivateWall = true;
@@ -281,8 +271,19 @@ class Level extends Phaser.Scene {
 				this.updateScore();
 			}
 		}, null, this);
-		this.input.on("pointerdown", () => {
-			!this.isGameOver && this.activateWall();
+
+		this.txt_info = this.add.text(this.game.config.width / 2, 250, "TAP TO PLAY", {
+			"color": "#FFFFFF",
+			"fontFamily": "Arial",
+			"fontSize": "44px",
+			"align": "center",
+		}).setOrigin(0.5);
+
+		this.input.on("pointerdown", (p, g) => {
+			if (!g.length) {
+				this.txt_info.setVisible(false);
+				!this.isGameOver && this.activateWall();
+			}
 		}, this);
 	}
 	createWall(posX, posY, texture) {
@@ -293,6 +294,8 @@ class Level extends Phaser.Scene {
 		return wall;
 	}
 	activateWall() {
+		this.isGameStart = true;
+		this.btn_pause.setVisible(true);
 		if (this.player.body.speed == 0) {
 			let ballVelocity = this.physics.velocityFromAngle(Phaser.Math.Between(220, 320), this.ballSpeed)
 			this.player.setVelocity(ballVelocity.x, ballVelocity.y);
@@ -317,7 +320,7 @@ class Level extends Phaser.Scene {
 	}
 	update() {
 		let angle = Phaser.Math.RadToDeg(Phaser.Math.Angle.Between(0, 0, this.player.body.velocity.x, this.player.body.velocity.y));
-		this.player.setRotation(Phaser.Math.DegToRad(angle - 90));
+		this.isGameStart && this.player.setRotation(Phaser.Math.DegToRad(angle - 90));
 		if ((this.player.y > this.game.config.height || this.player.y < 0) && !this.isGameOver) {
 			this.isGameOver = true;
 			this.time.addEvent({
