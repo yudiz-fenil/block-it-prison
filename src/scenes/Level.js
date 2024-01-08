@@ -195,6 +195,7 @@ class Level extends Phaser.Scene {
 		});
 	}
 	showPopup = () => {
+		this.btn_pause.setVisible(false);
 		localStorage.setItem(gameOptions.localStorageName, Math.max(this.score, this.topScore));
 		this.txt_current_score.setText(this.score);
 		this.txt_high_score.setText(Math.max(this.score, this.topScore));
@@ -233,7 +234,7 @@ class Level extends Phaser.Scene {
 		this.createWall(1230, this.game.config.height / 2, "wall-v"); // Right wall
 		this.createWall(this.game.config.width / 2, 75, "wall-h"); // Top wall
 		this.lowerWall = this.createWall(960, 1057, "wall");
-		this.lowerWall.alpha = 0.1;
+		this.lowerWall.alpha = 1;
 
 		this.btn_replay.setInteractive()
 			.on("pointerup", this.handleReplay, this)
