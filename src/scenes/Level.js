@@ -1,5 +1,6 @@
 
 // You can write more code here
+import Phaser from "phaser";
 let gameOptions = {
 	wallDuration: 100,
 	ballStartSpeed: 300, //300
@@ -9,7 +10,7 @@ let gameOptions = {
 
 /* START OF COMPILED CODE */
 
-class Level extends Phaser.Scene {
+export default class Level extends Phaser.Scene {
 
 	constructor() {
 		super("Level");
